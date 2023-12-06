@@ -38,7 +38,8 @@ mysql> source f1db.sql
 $ mysqldump -u root -p --compatible=ansi --skip-quote-names --no-data f1db > f1db_schema.sql
 ```
 
-Edited CREATE TABLE statements for compatibility. This schema can be found in this repository.
+Edited CREATE TABLE statements for compatibility.
+This schema can be found in this repository as [f1db_schema.sql](f1db_schema.sql)
 
 ```
 $ mysqldump -u root -p --compatible=ansi --skip-quote-names --no-create-info --skip-extended-insert --skip-add-locks --skip-add-drop-table f1db > f1db_data.sql
