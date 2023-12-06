@@ -32,6 +32,7 @@ mysql> create database f1db
 mysql> source f1db.sql
 ```
 
+
 ## Export from MySQL
 
 ```
@@ -51,9 +52,9 @@ Manually fixed a couple of embedded single quotes (\' -> '') in INSERT statement
 ## Install PostgreSQL and import
 
 ```
-$ psql postgresql://scott:tiger@localhost:6543/f1db
+$ psql postgresql://username:password@localhost:5432/f1db
 
-$ psql -h localhost -U scott -d f1db -p 6543 < f1db/f1db_schema.sql
+$ psql -h localhost -U scott -d f1db -p 5432 < f1db/f1db_schema.sql
 
-$ psql -h localhost -U scott -d f1db -p 6543 < f1db/f1db_data.sql &> /tmp/output.log
+$ psql -h localhost -U scott -d f1db -p 5432 < f1db/f1db_data.sql &> /tmp/output.log
 ```
