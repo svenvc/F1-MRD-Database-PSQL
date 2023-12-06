@@ -3,20 +3,13 @@
 -- Host: localhost    Database: f1db
 -- ------------------------------------------------------
 -- Server version	8.2.0
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO,ANSI' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table "circuits"
 --
 
 DROP TABLE IF EXISTS circuits;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE circuits (
   circuitId int NOT NULL ,
   circuitRef varchar(255) NOT NULL DEFAULT '',
@@ -30,15 +23,13 @@ CREATE TABLE circuits (
   PRIMARY KEY (circuitId),
   UNIQUE (url)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "constructorResults"
 --
 
 DROP TABLE IF EXISTS constructorResults;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE constructorResults (
   constructorResultsId int NOT NULL ,
   raceId int NOT NULL DEFAULT '0',
@@ -47,15 +38,12 @@ CREATE TABLE constructorResults (
   status varchar(255) DEFAULT NULL,
   PRIMARY KEY (constructorResultsId)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "constructors"
 --
 
 DROP TABLE IF EXISTS constructors;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE constructors (
   constructorId int NOT NULL ,
   constructorRef varchar(255) NOT NULL DEFAULT '',
@@ -65,15 +53,13 @@ CREATE TABLE constructors (
   PRIMARY KEY (constructorId),
   UNIQUE (name)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "constructorStandings"
 --
 
 DROP TABLE IF EXISTS constructorStandings;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE constructorStandings (
   constructorStandingsId int NOT NULL ,
   raceId int NOT NULL DEFAULT '0',
@@ -84,15 +70,13 @@ CREATE TABLE constructorStandings (
   wins int NOT NULL DEFAULT '0',
   PRIMARY KEY (constructorStandingsId)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "drivers"
 --
 
 DROP TABLE IF EXISTS drivers CASCADE;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE drivers (
   driverId int NOT NULL ,
   driverRef varchar(255) NOT NULL DEFAULT '',
@@ -106,15 +90,13 @@ CREATE TABLE drivers (
   PRIMARY KEY (driverId),
   UNIQUE (url)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "driverStandings"
 --
 
 DROP TABLE IF EXISTS driverStandings;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE driverStandings (
   driverStandingsId int NOT NULL ,
   raceId int NOT NULL DEFAULT '0',
@@ -125,15 +107,12 @@ CREATE TABLE driverStandings (
   wins int NOT NULL DEFAULT '0',
   PRIMARY KEY (driverStandingsId)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "races"
 --
 
 DROP TABLE IF EXISTS races CASCADE;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE races (
   raceId int NOT NULL ,
   year int NOT NULL DEFAULT '0',
@@ -156,15 +135,13 @@ CREATE TABLE races (
   PRIMARY KEY (raceId),
   UNIQUE (url)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "lapTimes"
 --
 
 DROP TABLE IF EXISTS lapTimes;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE lapTimes (
   raceId int NOT NULL,
   driverId int NOT NULL,
@@ -174,15 +151,13 @@ CREATE TABLE lapTimes (
   milliseconds int DEFAULT NULL,
   PRIMARY KEY (raceId,driverId,lap)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "pitStops"
 --
 
 DROP TABLE IF EXISTS pitStops;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE pitStops (
   raceId int NOT NULL,
   driverId int NOT NULL,
@@ -193,15 +168,13 @@ CREATE TABLE pitStops (
   milliseconds int DEFAULT NULL,
   PRIMARY KEY (raceId,driverId,"stop")
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "qualifying"
 --
 
 DROP TABLE IF EXISTS qualifying;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE qualifying (
   qualifyId int NOT NULL ,
   raceId int NOT NULL DEFAULT '0',
@@ -214,15 +187,13 @@ CREATE TABLE qualifying (
   q3 varchar(255) DEFAULT NULL,
   PRIMARY KEY (qualifyId)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "results"
 --
 
 DROP TABLE IF EXISTS results;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE results (
   resultId int NOT NULL ,
   raceId int NOT NULL DEFAULT '0',
@@ -244,30 +215,26 @@ CREATE TABLE results (
   statusId int NOT NULL DEFAULT '0',
   PRIMARY KEY (resultId)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "seasons"
 --
 
 DROP TABLE IF EXISTS seasons;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE seasons (
   year int NOT NULL DEFAULT '0',
   url varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY ("year"),
   UNIQUE (url)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "sprintResults"
 --
 
 DROP TABLE IF EXISTS sprintResults;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE sprintResults (
   sprintResultId int NOT NULL ,
   raceId int NOT NULL DEFAULT '0',
@@ -287,26 +254,18 @@ CREATE TABLE sprintResults (
   statusId int NOT NULL DEFAULT '0',
   PRIMARY KEY (sprintResultId)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table "status"
 --
 
 DROP TABLE IF EXISTS status;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE status (
   statusId int NOT NULL ,
   status varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (statusId)
 );
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-12-05 10:15:15
