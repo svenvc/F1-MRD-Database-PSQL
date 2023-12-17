@@ -58,3 +58,10 @@ $ psql -h localhost -U username -d f1db -p 5432 < f1db/f1db_schema.sql
 
 $ psql -h localhost -U username -d f1db -p 5432 < f1db/f1db_data.sql &> /tmp/output.log
 ```
+
+
+## Optionally add extra constraints
+
+```
+$ psql -h localhost -U username -d f1db -p 5432 < f1db/f1db_constraints.sql
+```
