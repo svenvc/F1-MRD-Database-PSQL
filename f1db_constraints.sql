@@ -155,7 +155,7 @@ FOREIGN KEY (driverid)
 REFERENCES drivers(driverid);
 
 ALTER TABLE qualifying
-ADD CONSTRAINT qualifying_constructors_fkey;
+DROP CONSTRAINT IF EXISTS qualifying_constructors_fkey;
 
 ALTER TABLE qualifying
 ADD CONSTRAINT qualifying_constructors_fkey
@@ -212,7 +212,7 @@ DROP CONSTRAINT IF EXISTS races_circuits_fkey;
 ALTER TABLE races
 ADD CONSTRAINT races_circuits_fkey
 FOREIGN KEY (circuitid)
-REFERENCES circuits(cirtcuitid);
+REFERENCES circuits(circuitid);
 
 ALTER TABLE races
 DROP CONSTRAINT IF EXISTS races_seasons_fkey;
