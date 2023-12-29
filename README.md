@@ -12,7 +12,7 @@ from the beginning of the world championships in 1950.
 
 http://ergast.com/mrd/
 
-PostgreSQL database created using database images.
+This repository contains a PostgreSQL database created using database images.
 
 - http://ergast.com/mrd/db/
 - http://ergast.com/docs/f1db_user_guide.txt
