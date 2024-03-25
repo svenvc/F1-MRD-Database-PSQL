@@ -41,6 +41,13 @@ The dump will try to set the table's owner to scott,
 which will most probably fail but that does not matter as the owner will be username.
 
 
+## Using Docker
+
+```bash
+$ docker build -t postgres-f1db .
+$ docker run -e POSTGRES_PASSWORD=postgres -p 127.0.0.1:5432:5432 postgres-f1db
+```
+
 ## The long way
 
 Start with the MySQL dump
